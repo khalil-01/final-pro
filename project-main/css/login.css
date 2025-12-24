@@ -1,0 +1,276 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+
+/* =========================
+   General
+========================= */
+body {
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+}
+
+/* =========================
+   Main Header
+========================= */
+.main-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 18px 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+  color: #000000;
+}
+
+/* =========================
+   Navigation
+========================= */
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(0,0,0,0.8);
+  transition: color 0.2s ease;
+}
+
+/* الخط السفلي المخفي */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #12A3ED;
+  transition: width 0.25s ease, left 0.25s ease;
+}
+
+/* Hover */
+.nav-links a:hover {
+  color: #12A3ED;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* =========================
+   Header Button
+========================= */
+.header-action .btn {
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 16px;
+  background: #12A3ED;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-action .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(18,163,237,0.35);
+}
+
+/* =========================
+   Background
+========================= */
+.login-page {
+  min-height: 100vh;
+  background: rgba(217, 217, 217, 0.3);
+  display: flex;
+  align-items: center;
+  color: #000000;
+  overflow: hidden;
+}
+
+.login-page .container {
+  max-width: 1500px;
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes fadeSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(220px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(150px);
+  }
+}
+
+@keyframes fadeSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================
+   Form Wrapper
+========================= */
+.form-wrapper {
+  width: 460px;
+}
+
+/* =========================
+   Login Card
+========================= */
+.login-card {
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  padding: 48px;
+  border-radius: 18px;
+  transform: translateX(150px);
+  animation: fadeSlideRight 0.8s ease-out forwards;
+}
+
+/* =========================
+   Title & Description
+========================= */
+.login-card h2 {
+  font-size: 32px;
+  color: #000000;
+}
+
+.login-desc {
+  font-size: 15px;
+  color: rgba(0,0,0,0.7);
+}
+
+/* =========================
+   Inputs
+========================= */
+.login-card .form-control {
+  height: 56px;
+  background: #ffffff;
+  border: 1.5px solid rgba(0,0,0,0.3);
+  color: #000000;
+  border-radius: 14px;
+  padding: 0 22px;
+  font-size: 15px;
+}
+
+.login-card .form-control::placeholder {
+  color: rgba(0,0,0,0.5);
+}
+
+.login-card .form-control:focus {
+  background: #ffffff;
+  border-color: #12A3ED;
+  box-shadow: none;
+}
+
+/* =========================
+   Forgot Password
+========================= */
+.forgot-link {
+  font-size: 14px;
+  color: #12A3ED;
+  text-decoration: none;
+}
+
+/* =========================
+   Button
+========================= */
+.login-card .btn-primary {
+  height: 56px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  background: #12A3ED;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.login-card .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(18,163,237,0.4);
+  opacity: 1;
+}
+
+
+/* =========================
+   Bottom Text
+========================= */
+.login-card .small {
+  font-size: 14px;
+  color: rgba(0,0,0,0.7);
+}
+
+.login-card .small a {
+  color: #12A3ED;
+  text-decoration: none;
+}
+
+/* =========================
+   Image Box
+========================= */
+.image-box {
+  width: 460px;
+  height: 340px;
+  background: rgba(18,163,237,0.12);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 18px;
+  color: #12A3ED;
+  margin-right: 120px;
+  margin-top: 60px;
+  animation: fadeSlideLeft 0.8s ease-out forwards;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 992px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .image-box {
+    display: none;
+  }
+
+  .form-wrapper {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .login-card {
+    padding: 40px;
+    transform: none;
+    animation: none;
+  }
+}

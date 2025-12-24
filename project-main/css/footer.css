@@ -1,0 +1,49 @@
+/* =========================
+   Footer
+========================= */
+.main-footer {
+  background: #ffffff;
+  border-top: 1px solid #d1d1d1;
+  padding: 30px 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-left a {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.footer-left a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #12A3ED;
+  transition: width 0.25s ease, left 0.25s ease;
+}
+
+.footer-left a:hover {
+  color: #12A3ED;
+}
+
+.footer-left a:hover::after {
+  width: 100%;
+  left: 0;
+}

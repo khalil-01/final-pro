@@ -1,0 +1,220 @@
+/* =========================
+   Header
+========================= */
+.main-header {
+  background: rgba(217, 217, 217, 0.3);
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #d1d1d1;
+
+  /* ???? ???? ???? ?????? */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+}
+
+.main-header.scrolled {
+  background: rgba(217, 217, 217, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   Layout
+========================= */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   Navigation
+========================= */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #12A3ED;
+  transition: width 0.25s ease, left 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #12A3ED;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-links a.active {
+  color: #12A3ED;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-links a.active:hover {
+  transform: translateY(-1px);
+  text-shadow: 0 0 6px rgba(18, 163, 237, 0.4);
+}
+
+/* =========================
+   Header Button
+========================= */
+.header-btn {
+  padding: 12px 28px;
+  background: #12A3ED;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(18,163,237,0.35);
+}
+
+/* =========================
+   Logo
+========================= */
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.logo-text {
+  display: inline-block;
+}
+
+/* =========================
+   Mobile Menu Button
+========================= */
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.menu-toggle i {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Global Offset for fixed header
+========================= */
+body {
+  padding-top: 96px;
+}
+
+/* =========================
+   Responsive (mobile only)
+========================= */
+
+@media (max-width:1200px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: -90px;
+    flex-direction: column;
+    align-items: flex-center;
+    gap: 12px;
+    padding: 16px;
+    width: max-content;
+    min-width: 140px;
+    max-width: 90vw;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .main-header {
+    padding: 16px 0;
+  }
+
+  body {
+    padding-top: 80px;
+  }
+}
+
+/* تقليل الفجوة بين الروابط في العروض المتوسطة */
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 15px;
+  }
+}
+
+
